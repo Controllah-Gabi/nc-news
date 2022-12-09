@@ -14,16 +14,6 @@ export const IndividualArticle = () => {
         .then(articles=>{
             setarticleData(articles.data.article[0])
         })
-        
-        unsplash.get('/search/photos?query=sports')
-        .then(images=>{
-            console.log(images.data.results)
-            setarticleImage(images.data.results)
-        })
-            
-    
-
-
     },[])
   return (
     <div className='news-data' key={articleData.article_id}>
@@ -42,10 +32,10 @@ export const IndividualArticle = () => {
                 </div>
               <div className='img-section'>
               <span>{articleData.topic}</span>
-              <img
+              {/* <img
                 src={articleImage[0].urls.small}
                 alt="hiya"
-              />
+              /> */}
               </div>
             </section>
             <hr/>
