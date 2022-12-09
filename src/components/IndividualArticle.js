@@ -48,7 +48,7 @@ export const IndividualArticle = () => {
               />
               </div>
             </section>
-            
+            <hr/>
           </div>
   )
 }
