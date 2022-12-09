@@ -120,3 +120,21 @@ main .c3-container button{
 .c3-container .news-data li{
   display: block;
 }
+
+/*--------- individual article ---------*/
+
+.news-data section{
+  display: flex;
+}
+
+.news-data button img{
+  width:100%;
+}
+
+.news-data button{
+  width: 5%;
+  height: 5%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}

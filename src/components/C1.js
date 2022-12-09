@@ -34,7 +34,7 @@ export const C1 = () => {
               <div className='news-data' key={element.article_id}>
             <li key={element.article_id}>
                 <div className='content-section'>
-                    <h2><Link to={`/${element.article_id}`}>{element.title}</Link></h2>
+                    <h2><Link to={`/article/${element.article_id}`}>{element.title}</Link></h2>
                     <br/>
                     <p>{element.body}</p>
                     <br/>
@@ -47,7 +47,7 @@ export const C1 = () => {
                 </div>
               <div className='img-section'>
               <span>{element.topic}</span>
-              <Link to={`/${element.article_id}`}><img
+              <Link to={`/article/${element.article_id}`}><img
                 src={imageData[count].urls.thumb}
                 alt="hiya"
               /></Link>

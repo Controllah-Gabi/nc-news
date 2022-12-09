@@ -3,8 +3,9 @@ import { Header } from "./components/header";
 import "./App.css"
 import { Navigation } from "./components/navigation";
 import { Main } from "./components/Main";
-import { Routes,Route } from "react-router-dom";
+import { Routes,Route, useParams } from "react-router-dom";
 import { IndividualArticle } from "./components/IndividualArticle";
+
 
 function App() {
   return (<div className="container">
@@ -13,7 +14,7 @@ function App() {
     <Navigation/>
     <Routes>
       <Route path ="/" element={<Main/>}/>
-      <Route path ="/home" element={<IndividualArticle/>}/>
+      <Route path ="/article/:article_id" element={<IndividualArticle/>}/>
     </Routes>
     </div>
   </div>
