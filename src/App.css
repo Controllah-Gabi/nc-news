@@ -138,3 +138,7 @@ main .c3-container button{
   background-color: rgba(255, 255, 255, 0);
   border: none;
 }
+
+.comment-section{
+  text-align: center;
+}

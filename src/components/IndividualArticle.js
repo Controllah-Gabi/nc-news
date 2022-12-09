@@ -3,17 +3,23 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import unsplash from './unsplash'
 import upVote from "../assets/—Pngtree—vector like icon_4013753.png"
+import { Comments } from './comments'
+import { IncrementVote } from './IncrementVote'
 
 
 export const IndividualArticle = () => {
     const [articleData,setarticleData] = useState({})
     const [articleImage,setarticleImage] = useState([])
+    const [comments, setComments] = useState(false)
+    const [votes, setVotes] = useState(0)
     const {article_id}=useParams()
     useEffect(()=>{
         axios.get(`https://fair-teal-shark-cape.cyclic.app/api/articles/${article_id}`)
         .then(articles=>{
             setarticleData(articles.data.article[0])
+            setVotes(articles.data.article[0].votes)
         })
+        
     },[])
   return (
     <div className='news-data' key={articleData.article_id}>
@@ -27,7 +33,10 @@ export const IndividualArticle = () => {
                     <br/>
                     <span>Create at: {articleData.created_at}</span>
                     <br/>
-                    <button><img src={upVote}/> <br/>{articleData.votes}</button>
+                    <button onClick={()=>{
+                        IncrementVote(article_id)
+                        setVotes(votes +1)
+                    }}><img src={upVote}/> <br/>{votes}</button>
                     <br/>
                 </div>
               <div className='img-section'>
@@ -39,6 +48,12 @@ export const IndividualArticle = () => {
               </div>
             </section>
             <hr/>
+              <div className='comment-section'>
+                <button onClick={()=>{
+                    setComments(true)
+                }}>Comments</button>
+                {comments===true?<Comments article_id={article_id}/>:""}
+              </div>
           </div>
   )
 }
