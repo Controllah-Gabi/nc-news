@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import logo from "../assets/NC.png";
-
 
 export const Header = () => {
     const [Data,setData] = useState('')
